@@ -15,14 +15,7 @@
 
 %define ejbca_dir_orig ejbca_ee_%{ejbca_ver_underline}
 
-# Create a preproduction package if the file .build_prep exists
-%if %(test -e .build_prep && echo 1 || echo 0)
-  %define platform prep
-%else
-  %define platform prod
-%endif
-
-Name:      ejbca-%{platform}
+Name:      ejbca
 Summary:   EJBCA PKI Certificate Authority software
 Provides:  %{name}
 Version:   %{ejbca_version}
